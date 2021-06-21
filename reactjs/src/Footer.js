@@ -4,7 +4,9 @@ class Footer extends React.Component {
     render() {
         return (
             <div>
-                <p>@ Copynight 2021,ASAc</p>
+
+                <p> @CopyRight 2021 , ASAC</p>
+
             </div>
         )
     }

@@ -1,19 +1,17 @@
-import React from 'react'
-import Hedaer from './Hedaer'
-import Main from './Main'
-import Footer from './Footer'
+import React from 'react';
+import Hedaer from './Hedaer';
+import Main from './Main';
+import Footer from './Footer';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Hedaer/>
-        <Main/>
-        <Footer/>
-      </div>
-    )
-  }
+class App extends React.Component{
+    render(){
+        return(
+            <div>
+            <Hedaer/>
+            <Main/>
+            <Footer/>
+            </div>
+        )
+    }
 }
-
-export default App
-
+export default App;

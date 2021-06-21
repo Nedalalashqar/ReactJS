@@ -1,16 +1,32 @@
-import React from 'react'
-import Beast1 from './Beast1'
-import Beast2 from './Beast2'
+
+import React from 'react';
+import HornedBeast from './HornedBeast'
+import Horns from './Horns.json'
 
 class Main extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
-        return (
+        return ( 
             <div>
-               <Beast1/>
-               <Beast2/> 
+                {
+                    Horns.map(item => {
+                        return (
+                            <HornedBeast
+                                title={item.title}
+                                img_url={item.image_url}
+                                description={item.description}
+                            />
+                        )
+                    })
+                }
             </div>
         )
     }
+
 }
 
-export default Main
+export default Main;
