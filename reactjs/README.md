@@ -9,21 +9,6 @@ Actual time needed to complete: __8___
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
