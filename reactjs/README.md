@@ -1,3 +1,20 @@
+Number and name of feature: ________________________________
+
+Estimate of time needed to complete: ___5__
+
+Start time: __1___
+
+Finish time: ____12_
+
+Actual time needed to complete: _11____
+
+
+
+
+
+
+
+
 Number and name of feature: 
 Estimate of time needed to complete: ____4_
 
