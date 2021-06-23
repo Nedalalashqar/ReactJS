@@ -38,8 +38,6 @@ class HornedBeast extends React.Component {
             description: this.props.description
         })
     }
-
-
     render() {
         return (
             <Col xs={12} sm={9} xl={3} style={{ paddingTop: "8vh", paddingLeft: "8vh" }} >
