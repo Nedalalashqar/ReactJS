@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import HornedBeast from './HornedBeast'
 import { Container, CardGroup, Card, Row } from 'react-bootstrap'
 // import Horns from './Horns.json'
@@ -24,22 +25,29 @@ class Main extends React.Component {
         this.props.Horns.forEach((beast) => {
             switch (value) {
                 case '1':
+
                     if (beast.horns === 1) {
                         newFilteredData.push(beast);
                     }
                     break;
+
                 case '2':
+
                     if (beast.horns === 2) {
                         newFilteredData.push(beast);
                     }
                     break;
+
                 case '3':
+
                     if (beast.horns === 3) {
                         newFilteredData.push(beast);
                     }
                     break;
 
+
                 case '100':
+
                     if (beast.horns === 100) {
                         newFilteredData.push(beast);
                     }
@@ -47,18 +55,21 @@ class Main extends React.Component {
                 default:
                     newFilteredData.push(beast);
             }
+
         })
         this.setState({
             filteredData: newFilteredData,
         })
+
     }
 
     render() {
         return (
             <Row>
+
                 <Forms result={this.result} />
                 <CardColumns style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    {
+     {
                         this.props.data.map(item => {
                             return (
                                 <HornedBeast
@@ -67,12 +78,16 @@ class Main extends React.Component {
                                     description={item.description}
                                     modal={this.props.selectMod}
 
+
+
                                 />
                             )
                         })
                     }
                 </CardColumns>
+
             </Row >
+
         )
     }
 
