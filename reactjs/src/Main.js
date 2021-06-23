@@ -1,42 +1,53 @@
 
 import React from 'react';
-import HornedBeast from './HornedBeast';
-import { CardColumns,Row} from 'react-bootstrap';
-// import Horns from './Horns.json'
-import FormFilter from './FormFilter';
-// import CardColumns from "react-bootstrap/CardColumns";
 
+import HornedBeast from './HornedBeast'
+import { Container, CardGroup, Card, Row } from 'react-bootstrap'
+// import Horns from './Horns.json'
+import CardColumns from "react-bootstrap/CardColumns";
+import Forms from "./Forms";
 
 class Main extends React.Component {
 
-    constructor (props) {
+    // constructor(props) {
+    //     super(props);
+    // }
+
+    constructor(props) {
         super(props)
         this.state = {
-        filteredData : this.props.Horns,
+            filteredData: this.props.Horns,
         }
     }
-
-    filterResult = (value) => {
+    result = (value) => {
         let newFilteredData = [];
+
         this.props.Horns.forEach((beast) => {
-            switch(value) {
-                case "One":
+            switch (value) {
+                case '1':
+
                     if (beast.horns === 1) {
                         newFilteredData.push(beast);
                     }
                     break;
-                case "Tow":
+
+                case '2':
+
                     if (beast.horns === 2) {
                         newFilteredData.push(beast);
                     }
                     break;
-                case "Three":
+
+                case '3':
+
                     if (beast.horns === 3) {
                         newFilteredData.push(beast);
                     }
                     break;
-    
-                case "More":
+
+
+                case '100':
+
                     if (beast.horns === 100) {
                         newFilteredData.push(beast);
                     }
@@ -44,18 +55,21 @@ class Main extends React.Component {
                 default:
                     newFilteredData.push(beast);
             }
-        })  
+
+        })
         this.setState({
-            filteredData : newFilteredData,
-          })
+            filteredData: newFilteredData,
+        })
+
     }
 
     render() {
-        return ( 
+        return (
             <Row>
-                <FormFilter filterResult = {this.filterResult} />
-                <CardColumns style={{display: 'flex', flexWrap: 'wrap' }}>
-                    {
+
+                <Forms result={this.result} />
+                <CardColumns style={{ display: 'flex', flexWrap: 'wrap' }}>
+     {
                         this.props.data.map(item => {
                             return (
                                 <HornedBeast
@@ -63,13 +77,17 @@ class Main extends React.Component {
                                     img_url={item.image_url}
                                     description={item.description}
                                     modal={this.props.selectMod}
-                                
+
+
+
                                 />
                             )
                         })
                     }
                 </CardColumns>
-            </Row>
+
+            </Row >
+
         )
     }
 
