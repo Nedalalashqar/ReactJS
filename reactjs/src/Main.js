@@ -1,4 +1,5 @@
 import React from 'react';
+
 import HornedBeast from './HornedBeast'
 import { Row } from 'react-bootstrap'
 import Horns from './Horns.json'
@@ -13,6 +14,7 @@ class Main extends React.Component {
         }
         this.filter = this.filter.bind(this);
     }
+
     filter (event) {
         event.preventDefault();
         
@@ -30,6 +32,7 @@ class Main extends React.Component {
         }
     }
     render() {
+
             return (
                 <>
                     <div className='container' >
@@ -60,6 +63,7 @@ class Main extends React.Component {
                     </div>
                 </>
             )
+
     }
 }
 export default Main;
