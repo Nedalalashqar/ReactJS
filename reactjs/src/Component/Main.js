@@ -1,9 +1,7 @@
 import React from 'react';
-
 import HornedBeast from './HornedBeast'
-import { Row } from 'react-bootstrap'
-import Horns from './Horns.json'
-import Form from "react-bootstrap/Form";
+import { Row , Form } from 'react-bootstrap'
+import Horns from '../Horns.json'
 
 class Main extends React.Component {
     constructor(props) {

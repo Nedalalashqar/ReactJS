@@ -5,7 +5,7 @@ class Footer extends React.Component {
         return (
             <div>
 
-                <p> @CopyRight 2021 , ASAC</p>
+                <p> @CopyRight 2021 , Nedal Alashqar</p>
 
             </div>
         )
