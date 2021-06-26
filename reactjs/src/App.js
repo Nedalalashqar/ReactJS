@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import SelectedBeast from './SelectedBeast'
+import Header from './Component/Header';
+import Main from './Component/Main';
+import Footer from './Component/Footer';
+import SelectedBeast from './Component/SelectedBeast'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Horns from './Horns.json'
 

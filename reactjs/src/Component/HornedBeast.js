@@ -3,18 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Button, Card, Col } from 'react-bootstrap'
 
-
-// const styles = {
-//     myCoolButton: {
-//         paddingTop: "10vh",
-//         paddingBottom: "10vh",
-//         paddingRight: "10vw",
-//         paddingLeft: "10vw"
-//     }
-// }
-
-
-
 class HornedBeast extends React.Component {
     constructor(props) {
         super(props);
@@ -22,15 +10,11 @@ class HornedBeast extends React.Component {
             Votes: 0,
         }
     }
-
-
-
     addVote = () => {
         this.setState({
             Votes: this.state.Votes + 1,
         })
     }
-
     click = () => {
         this.props.modal({
             title: this.props.title,
@@ -49,15 +33,11 @@ class HornedBeast extends React.Component {
                             {this.props.description}
                         </Card.Text>
                     </Card.Body>
-                    
                         <Button style={{ width: "40%", marginLeft: "10vh" }} variant="primary"> 💛 {this.state.Votes}</Button>
                         <Button  style={{ width: "40%", marginTop: "4vh", marginBottom:'2vh', marginLeft: "8vh" }} variant="light" onClick={this.addVote}> Vote </Button>
-                   
-
                 </Card>
             </Col>
         )
     }
 }
-
 export default HornedBeast;
