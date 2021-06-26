@@ -4,7 +4,7 @@ import Main from './Component/Main';
 import Footer from './Component/Footer';
 import SelectedBeast from './Component/SelectedBeast'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Horns from './Horns.json'
+import Horns from './Component/Horns.json'
 
 class App extends React.Component {
     constructor(props) {
