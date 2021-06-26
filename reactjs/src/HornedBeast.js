@@ -1,17 +1,17 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Button, Card, Col, Image } from 'react-bootstrap'
+import { Button, Card, Col } from 'react-bootstrap'
 
 
-const styles = {
-    myCoolButton: {
-        paddingTop: "10vh",
-        paddingBottom: "10vh",
-        paddingRight: "10vw",
-        paddingLeft: "10vw"
-    }
-}
+// const styles = {
+//     myCoolButton: {
+//         paddingTop: "10vh",
+//         paddingBottom: "10vh",
+//         paddingRight: "10vw",
+//         paddingLeft: "10vw"
+//     }
+// }
 
 
 

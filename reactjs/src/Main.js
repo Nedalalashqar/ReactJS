@@ -1,81 +1,66 @@
-
 import React from 'react';
 import HornedBeast from './HornedBeast'
-import { Container, CardGroup, Card, Row } from 'react-bootstrap'
-// import Horns from './Horns.json'
-import CardColumns from "react-bootstrap/CardColumns";
-import Forms from "./Forms";
+import { Row } from 'react-bootstrap'
+import Horns from './Horns.json'
+import Form from "react-bootstrap/Form";
 
 class Main extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    // }
-
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            filteredData: this.props.Horns,
+           
+            horns:'all',
+            arr:Horns,
+        }
+        this.filter = this.filter.bind(this);
+    }
+    filter (event) {
+        event.preventDefault();
+        
+        this.setState({
+            horns:event.target.value,
+        }) 
+        if(event.target.value !== 'all'){
+            this.setState({
+                arr:Horns.filter(a => a.horns === event.target.value)
+            })
+        }else{
+            this.setState({
+                arr:Horns,
+            })
         }
     }
-    result = (value) => {
-        let newFilteredData = [];
-
-        this.props.Horns.forEach((beast) => {
-            switch (value) {
-                case '1':
-                    if (beast.horns === 1) {
-                        newFilteredData.push(beast);
-                    }
-                    break;
-                case '2':
-                    if (beast.horns === 2) {
-                        newFilteredData.push(beast);
-                    }
-                    break;
-                case '3':
-                    if (beast.horns === 3) {
-                        newFilteredData.push(beast);
-                    }
-                    break;
-
-                case '100':
-                    if (beast.horns === 100) {
-                        newFilteredData.push(beast);
-                    }
-                    break;
-                default:
-                    newFilteredData.push(beast);
-            }
-        })
-        this.setState({
-            filteredData: newFilteredData,
-        })
-    }
-
     render() {
-        return (
-            <Row>
-                <Forms result={this.result} />
-                <CardColumns style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    {
-                        this.props.data.map(item => {
-                            return (
+            return (
+                <>
+                    <div className='container' >
+                    
+                        <Form >
+                            <Form.Group controlId="exampleForm.SelectCustom">
+                                <Form.Label>how many horns?</Form.Label>
+                                <Form.Control as="select" custom name='select1' onChange={this.filter}>
+                                   <option value='all'>all</option>
+                                    <option value='1'>one</option>
+                                    <option value='2'>two</option>
+                                    <option value='3'>three</option>
+                                    <option value='100'>Wow..</option> 
+                                </Form.Control>
+                            </Form.Group>
+                        </Form>
+                        <Row xs={1} md={3} className="g-4">
+                            {this.props.data.map((item, idx) => 
                                 <HornedBeast
                                     title={item.title}
                                     img_url={item.image_url}
                                     description={item.description}
                                     modal={this.props.selectMod}
-
+                                    key={idx.toString()}
                                 />
-                            )
-                        })
-                    }
-                </CardColumns>
-            </Row >
-        )
+                            )}
+                        </Row>
+                    </div>
+                </>
+            )
     }
-
 }
-
 export default Main;
